@@ -9,7 +9,7 @@ must fall on text that is not already inside someone's tracked insertion or
 deletion; the script refuses rather than guessing.
 
     uv run redline.py IN.docx --dump                 # visible text per paragraph
-    uv run redline.py IN.docx OPS.json OUT.docx --author "Barry Brook" --initials BB
+    uv run redline.py IN.docx OPS.json OUT.docx --author "J. Citizen" --initials JC
 
 OPS.json is a list of operations, applied in order. Each locates text in the
 current view (insertions shown, deletions hidden) by before + target + after,
@@ -285,8 +285,8 @@ def main():
     ap.add_argument("ops", nargs="?")
     ap.add_argument("output", nargs="?")
     ap.add_argument("--dump", action="store_true", help="print visible text of each paragraph")
-    ap.add_argument("--author", default="Barry Brook")
-    ap.add_argument("--initials", default="BB")
+    ap.add_argument("--author", default="J. Citizen", help="name shown on changes and comments (default: J. Citizen)")
+    ap.add_argument("--initials", default="JC", help="initials shown on comments (default: JC)")
     args = ap.parse_args()
 
     infos, parts = read_docx(args.input)

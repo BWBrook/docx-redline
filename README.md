@@ -7,7 +7,7 @@ just as if they had typed it.
 
 ```bash
 uv run redline.py IN.docx --dump > visible.txt       # current text, one paragraph per line
-uv run redline.py IN.docx ops.json OUT.docx --author "Barry Brook" --initials BB
+uv run redline.py IN.docx ops.json OUT.docx --author "J. Citizen" --initials JC
 ```
 
 `ops.json` is a list applied in order. Each op finds `b + target + a` in the
@@ -21,6 +21,9 @@ and the target must not sit inside someone else's tracked change.
 ]
 ```
 
+- `--author` defaults to "J. Citizen" and `--initials` to "JC". To have changes
+  show as yours, pass your name exactly as it appears on your existing
+  comments in Word.
 - An empty `old` gives a pure insertion; an empty `new` gives a pure deletion.
 - Put a `com` before a `rep` on the same text so the comment covers both.
 - If any op fails, nothing is written. The input file is never overwritten.
