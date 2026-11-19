@@ -1,6 +1,7 @@
 # docx-redline
 
-> **Status:** developed in the open as a working record. This is work in progress: contents may change.
+> **Status:** archived on 19 November 2026 and no longer maintained. Kept as a
+> working record; fork it if it is useful to you.
 
 Adds word-level tracked changes and comments to an existing Word file under a
 named author, without disturbing comments and revisions already in it. It works
